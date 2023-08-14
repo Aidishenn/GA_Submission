@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+         <!--
+     I declare that this code was written by me. 
+     I will not copy or allow others to copy my code. 
+     I understand that copying code is considered as plagiarism.
+
+     Student Name: Edison Lee
+     Student ID: 22013147
+     Class: C369-2D-E63C
+     Date/Time Last modified: 13/8/2023 11:59pm
+       -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Exchange Rates</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url('SGVibe.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            height:500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        #currencySelect{
+            margin-top: 10px;
+            padding: 5px;
+            border: none;
+            border-radius: 50px;
+            margin: 5px 0;
+        }
+        #amountInput {
+            margin-top: 10px;
+            padding: 5px;
+            border: none;
+            border-radius: 50px;
+            margin: 5px 0;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #3498db;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            
+        }
+        #numberInput {
+            margin-top: 10px;
+            padding: 5px;
+            border: none;
+            border-radius: 50px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Currency Exchange Rates</h1>
+        <h2>1 SGD</h2>
+        <label for="currencySelect">Select Currency:</label>
+        <select id="currencySelect">
+            <option value="USD">USD (US Dollar)</option>
+            <option value="EUR">EUR (Euro)</option>
+            <option value="GBP">GBP (British Pound)</option>
+            <option value="JPY">JPY (Japanese Yen)</option>
+            <option value="CNH">CNH (Chinese Yuan)</option>
+            <option value="MYR">MYR (Malaysia Ringgit)</option>
+            <option value="CAD">CAD (Canadian Dollar)</option>
+        </select>
+        <p>Exchange Rate (SGD): <span id="exchangeRate">0.74</span></p>
+        <p>Enter Contact Number: <input type="number" id="numberInput" placeholder="Enter Contact Number"></p>
+        <p>Enter Amount in SGD: <input type="number" id="amountInput" placeholder="Enter amount"></p>
+        <button onclick="exchange()">Exchange</button>
+    </div>
+
+    <script>
+       const exchangeRates = {
+            USD: 0.74,
+            EUR: 0.63,
+            GBP: 0.54,
+            JPY: 106.20,
+            CNH: 5.34,
+            MYR: 3.39,
+            CAD: 0.99,
+        };
+
+        const currencySelect = document.getElementById('currencySelect');
+        const exchangeRateDisplay = document.getElementById('exchangeRate');
+
+
+        currencySelect.addEventListener('change', () => {
+            const selectedCurrency = currencySelect.value;
+            if (exchangeRates.hasOwnProperty(selectedCurrency)) {
+                const exchangeRate = exchangeRates[selectedCurrency];
+                exchangeRateDisplay.textContent = exchangeRate.toFixed(2);
+            }
+        });
+
+        function exchange() {
+            const selectedCurrency = currencySelect.value;
+            const amountSGD = parseFloat(document.getElementById('amountInput').value);
+            const contactNumber = document.getElementById('numberInput').value; 
+
+
+            if (isNaN(amountSGD) || amountSGD <= 0) {
+                alert('Please enter a valid amount.');
+                return;
+            }
+
+            if (!exchangeRates.hasOwnProperty(selectedCurrency)) {
+                alert('Invalid currency selected.');
+                return;
+            }
+            if (isNaN(contactNumber) || contactNumber <= 0) {
+                alert('Please enter a valid contact number.');
+                return;
+            }
+
+            const exchangeRate = exchangeRates[selectedCurrency];
+            const exchangedAmount = amountSGD * exchangeRate;
+
+            localStorage.setItem("amountSGD", amountSGD.toFixed(2));
+            localStorage.setItem("selectedCurrency", selectedCurrency);
+            localStorage.setItem("exchangedAmount", exchangedAmount.toFixed(2));
+            localStorage.setItem("contactNumber", contactNumber);
+
+            window.location.href = "Transferred.html";
+        } 
+    </script>
+</body>
+</html>

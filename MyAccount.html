@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+         <!--
+     I declare that this code was written by me. 
+     I will not copy or allow others to copy my code. 
+     I understand that copying code is considered as plagiarism.
+
+     Student Name: Edison Lee
+     Student ID: 22013147
+     Class: C369-2D-E63C
+     Date/Time Last modified: 13/8/2023 11:59pm
+       -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .background-image {
+            background-image: url('SGVibe.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* Center content vertically */
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            margin-bottom:400px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        .profile-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-name, .profile h1 {
+            font-size: 20px;
+            font-weight: bold;
+            color:white;
+        }
+
+        .financial-overview {
+            margin-top: 20px;
+            color:white;
+        }
+
+        .Savings, .Spendings {
+            font-size: 24px;
+            color: #28a745;
+        }
+
+        .Header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: transparent;
+            width: 80%;
+            max-width: 1200px;
+            height: 200px;
+            margin-bottom: auto;
+            margin-left: auto; 
+            margin-right: auto; 
+        }
+
+        .items a {
+            text-decoration: none;
+            font-size: 30px;
+            font-weight: 600;
+            color: white;
+            margin: 0 20px;
+        }
+
+        .Header > button a {
+            padding: 0;
+            border: none;
+            outline-width: 0;
+            background-color: transparent;
+            cursor: pointer;
+            font-size: 30px;
+            font-weight: 400;
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-image">
+        <div class="Header">
+            <img src="images.png" alt=""/>
+            <div class="items"><a href="HomePage.html">Home</a></div>
+            <div class="items"><a href="CurrencyExchange.html">Transfer</a></div>
+            <button class="logout-button"><a href="Login.html">Log Out</a></button>
+        </div>
+        <div class="container">
+            <div class="profile">
+                <h1>Welcome Back</h1>
+                <div class="profile-image">
+                    <img src="user.jpg" alt="User Profile">
+                </div>
+                <div class="profile-name">
+                    Edison Lee Hoong Yee
+                </div>
+            </div>
+            <div class="financial-overview">
+                <h2>Financial Overview</h2>
+                <p>Savings Account: <span class="Savings">$5,000</span></p>
+                <p>Spending Account:<span class="Spendings">$2,000</span></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

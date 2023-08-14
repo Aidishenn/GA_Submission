@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+         <!--
+     I declare that this code was written by me. 
+     I will not copy or allow others to copy my code. 
+     I understand that copying code is considered as plagiarism.
+
+     Student Name: Edison Lee
+     Student ID: 22013147
+     Class: C369-2D-E63C
+     Date/Time Last modified: 13/8/2023 11:59pm
+       -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Money Transferred</title>
+    <style>
+         *{
+            margin: 0;
+            padding: 0;
+        }
+        .background-image{
+            background-image: url('SGVibe.jpg');
+            background-size:cover;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items:center;
+        }
+        
+        h1 {
+            font-size: 36px;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 40px;
+        }
+        .details {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 80px;
+            color:white;
+            background-color: rgba(0, 0, 0, 0.5);
+            width:800px;
+            height: auto;
+            
+        }
+        .home-button {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .home-button a {
+            display: inline-block;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            text-decoration: none;
+            color: white;
+        }
+       p{
+        margin-bottom:15px;
+       }
+       
+    </style>
+</head>
+<body>
+    <div class="background-image">
+    <div class="details">
+        <h1>Transferred</h1>
+            <p>Amount Transferred in SGD: <span id="amountSGD"></span></p>
+            <p>Amount Transferred in Selected Currency: <span id="amountCurrency"></span></p>
+            <p>Selected Currency: <span id="selectedCurrency"></span></p>
+            <p>To:<span id = "contactNumber"></span></p>
+        <div class="home-button">
+            <a href="HomePage.html">Home</a>
+        </div>
+    </div>
+    </div>
+    <script>
+        const amountSGD = localStorage.getItem("amountSGD");
+        const exchangedAmount = localStorage.getItem("exchangedAmount");
+        const selectedCurrency = localStorage.getItem("selectedCurrency");
+        const contactNumber = localStorage.getItem("contactNumber");
+
+        document.getElementById("amountSGD").textContent = amountSGD;
+        document.getElementById("amountCurrency").textContent = exchangedAmount;
+        document.getElementById("selectedCurrency").textContent = selectedCurrency;
+        document.getElementById("contactNumber").textContent = contactNumber;
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       <!--
+     I declare that this code was written by me. 
+     I will not copy or allow others to copy my code. 
+     I understand that copying code is considered as plagiarism.
+
+     Student Name: Edison Lee
+     Student ID: 22013147
+     Class: C369-2D-E63C
+     Date/Time Last modified: 13/8/2023 11:59pm
+       -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Form</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+   
+  }
+  .registration-box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width:300px;
+  }
+  .input-field {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .Create {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+ 
+  <div class="registration-box">
+    <h2>Get Started</h2>
+    <form id="registration-form">
+      <input type="text" class="input-field" placeholder="Name" required>
+      <input type="text" id="username" class="input-field" placeholder="Username" required>
+      <input type="email" class="input-field" placeholder="Email" required>
+      <input type="tel" class="input-field" placeholder="Contact Number" id="contact-number" required>
+      <input type="password" class="input-field" placeholder="Password" required>
+      <input type="password" class="input-field" placeholder="Re-enter Password" required>
+    </form>
+    <div class="get-started">
+      <a href="Login.html" class="get-started-button">Get Started</a>
+  </div> 
+</div>
+<script>
+  const form = document.getElementById('registration-form');
+  const contactNumberInput = document.getElementById('contact-number');
+
+  contactNumberInput.addEventListener('input', function() {
+    this.value = this.value.replace(/\D/g, '');
+  });
+
+  function Create() {
+            var name = document.getElementById("name").value;
+            var username = document.getElementById("username").value;
+            var email = document.getElementById("email").value;
+            var contactNumber = document.getElementById("contact number").value;
+            var password = document.getElementById("password").value;
+            var password = document.getElementById("Re-enter password").value;
+     
+  }
+  
+</script>
+</body>
+</html>

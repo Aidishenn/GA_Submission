@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <!--
+     I declare that this code was written by me. 
+     I will not copy or allow others to copy my code. 
+     I understand that copying code is considered as plagiarism.
+
+     Student Name: Edison Lee
+     Student ID: 22013147
+     Class: C369-2D-E63C
+     Date/Time Last modified: 13/8/2023 11:59pm
+       -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    
+        .background-image{
+            background-image: url('SGVibe.jpg');
+            background-size:cover;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items:center;
+        }
+
+        .Login{
+            background-color:white;
+            width: 280px; 
+            height: 300px; 
+            padding: 20px;
+            margin-left: 1300px;
+           text-align:center;
+           border: 2px solid black;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+        width: 70%;
+        padding: 10px;
+        margin-bottom: 10px;
+         color: black;
+        background-color: white;
+        border-color:black;
+    }
+    .login-button {
+      color:black ;
+      padding: 10px 24px;
+      border: black;
+      cursor: pointer;
+      width: 70%;
+      font-size: 20px;
+    }
+    .login-button a {   
+            color: black; 
+            text-decoration: none; 
+        }
+    .get-started{
+        margin-top: 30px;
+    }
+        
+    .forget-password {
+        margin-top: 30px;
+    }
+    
+    </style>
+</head>
+<body>
+    <div class="background-image">
+        <div class = "Login">
+            <h1>PacificBank</h1>
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button class="login-button" onclick="login()">Login</button>
+            <div class="get-started">
+                <a href="SignUp.html" class="get-started-button">Get Started</a>
+            </div>  
+            <div class="forget-password">
+                Forget Username/Password
+            </div>
+        </div>
+    </div>
+    <script>
+        function login() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            if (username == "" || password == "") {
+                alert("Please enter both username and password!");
+            } else {
+                window.location.href = "HomePage.html";
+            }
+        }
+    </script>
+</body>
+</html>
